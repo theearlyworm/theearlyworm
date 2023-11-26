@@ -1,0 +1,34 @@
+import numpy as np
+
+# Function to calculate future value with simple interest
+def future_value_simple_interest(principal, interest_rate, years):
+    return principal * (1 + interest_rate) ** years
+
+# Function to calculate future value with compound interest
+def future_value_compound_interest(principal, interest_rate, years):
+    return principal * np.exp(interest_rate * years)
+
+# Function to calculate future value with logarithmic growth
+def future_value_logarithmic_growth(principal, growth_rate, years):
+    return principal * np.exp(growth_rate * np.log(1 + growth_rate) * years)
+
+# Function to calculate future value with a custom formula (e.g., for more complex scenarios)
+def custom_future_value_formula(principal, custom_factor, years):
+    return principal * (1 + custom_factor) ** years
+
+# Example usage
+initial_investment = 1000
+interest_rate = 0.05
+years = 5
+
+# Calculate future values using different functions
+future_value_simple = future_value_simple_interest(initial_investment, interest_rate, years)
+future_value_compound = future_value_compound_interest(initial_investment, interest_rate, years)
+future_value_logarithmic = future_value_logarithmic_growth(initial_investment, interest_rate, years)
+custom_future_value = custom_future_value_formula(initial_investment, interest_rate, years)
+
+# Display the results
+print(f"Future Value (Simple Interest): ${future_value_simple:.2f}")
+print(f"Future Value (Compound Interest): ${future_value_compound:.2f}")
+print(f"Future Value (Logarithmic Growth): ${future_value_logarithmic:.2f}")
+print(f"Custom Future Value: ${custom_future_value:.2f}")
